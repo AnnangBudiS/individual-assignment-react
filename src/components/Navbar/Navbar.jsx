@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import auth from '../../utils/Auth';
+import { Link, useNavigate } from 'react-router-dom';
 import { BsCart3 } from 'react-icons/bs';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div className="fixed w-full z-[1] bg-white shadow-md p-4">
       <nav className="flex justify-between items-center lg:container lg:mx-auto ">
@@ -29,6 +30,7 @@ const Navbar = () => {
           >
             Login
           </Link>
+          <Link onClick={auth.logout}>Logout</Link>
         </div>
       </nav>
     </div>

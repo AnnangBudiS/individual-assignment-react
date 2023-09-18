@@ -30,6 +30,7 @@ const HomePage = () => {
               img={items.image}
               price={formatter.format(items.price)}
               rating={items.rating.rate}
+              links={items.id}
             />
           ))}
         </div>

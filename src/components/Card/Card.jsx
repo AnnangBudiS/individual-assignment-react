@@ -1,8 +1,9 @@
 import React from 'react';
 // import icons
 import { BsFillStarFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
-const Card = ({ img, title, price, rating }) => {
+const Card = ({ img, title, price, rating, links }) => {
   return (
     <div className="px-12 lg:px-0">
       <div className="p-5 lg:max-w-md shadow h-full bg-white rounded-lg">
@@ -14,7 +15,11 @@ const Card = ({ img, title, price, rating }) => {
           />
         </a>
         <div className="py-2">
-          <h1 className="text-xl font-semibold">{title}</h1>
+          <Link to={`/detail/${links}`}>
+            <h1 className="text-xl font-semibold text-gray-600 hover:text-slate-900">
+              {title}
+            </h1>
+          </Link>
           <div className="flex justify-between items-center mt-4">
             <p className="text-xl font-semibold">{price}</p>
             <p className="font-semibold flex items-center space-x-2 ">
